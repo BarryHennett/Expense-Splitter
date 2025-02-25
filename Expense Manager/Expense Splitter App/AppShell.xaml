@@ -12,4 +12,6 @@
         ContentTemplate="{DataTemplate local:MainPage}"
         Route="MainPage" />
 
+    <ShellContent Route="GroupExpense" ContentTemplate="{DataTemplate local:GroupExpenseList}" />
+
 </Shell>

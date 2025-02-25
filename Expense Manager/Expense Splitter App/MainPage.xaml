@@ -18,7 +18,6 @@
 
             <Entry 
                 Placeholder="Enter Group Name"
-                   Text="{Binding Text}"
                    Grid.Row="1"/>
 
             <Button
@@ -26,24 +25,25 @@
                 Text="Add Group" FontAttributes="Bold" FontSize="20"
                 Grid.Row="1"    Grid.Column="1"
                 Clicked="AddGroupBTN_Clicked"/>
-            
+
         </Grid>
-        
-        <BoxView HeightRequest="50" VerticalOptions="FillAndExpand" Color="White" />
-        
-        <CollectionView>
-            
-        </CollectionView>
+
+        <ListView ItemsSource="{Binding Groups}"
+              SelectedItem="{Binding SelectedGroup, Mode=TwoWay}"
+              SelectionMode="Single">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <TextCell Text="{Binding Name}" 
+                          Command="{Binding GroupSelectedCommand}"
+                          CommandParameter="{Binding}" />
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
         <Label
                 Text="Recent Transactions"
                 HorizontalOptions="Start"
                 SemanticProperties.HeadingLevel="Level1" />
-            
+
         <BoxView HeightRequest="50" VerticalOptions="FillAndExpand" Color="White" />
-        <CollectionView>
-            
-        </CollectionView>
-
-
-        </StackLayout>
+    </StackLayout>
 </ContentPage>

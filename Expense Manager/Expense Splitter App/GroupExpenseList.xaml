@@ -4,15 +4,7 @@
              x:Class="Expense_Splitter_App.GroupExpenseList"
              Title="GroupExpenseList">
     <VerticalStackLayout>
-        <Label 
-            Text="Utilities"
-            VerticalOptions="Start" 
-            HorizontalOptions="Center" />
-        <Image/>
+        <Label Text="{Binding GroupName}" FontSize="24" HorizontalOptions="Center" VerticalOptions="Center" />
 
-        <Grid>
-            
-            
-        </Grid>
     </VerticalStackLayout>
 </ContentPage>

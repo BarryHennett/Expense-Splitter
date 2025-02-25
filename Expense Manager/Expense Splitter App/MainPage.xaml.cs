@@ -1,14 +1,19 @@
 ﻿using Expense_Splitter_App.ViewModel;
+using Expense_Splitter_App.Model;
+
 namespace Expense_Splitter_App
 {
     public partial class MainPage : ContentPage
     {
-        int count = 0;
 
-        public MainPage(MainViewModel vm)
+        public MainPage()
         {
             InitializeComponent();
+            BindingContext = new MainViewModel();
         }
+
+
+        
 
         private void AddGroupBTN_Clicked(object sender, EventArgs e)
         {
@@ -17,10 +22,7 @@ namespace Expense_Splitter_App
 
         private void Button_Clicked(object sender, EventArgs e)
         {
-            Navigation.PushAsync(new GroupExpenseList());
+           // Navigation.PushAsync(new GroupExpenseList());
         }
-
-
     }
-
 }
