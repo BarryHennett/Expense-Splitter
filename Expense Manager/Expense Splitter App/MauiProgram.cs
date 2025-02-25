@@ -1,4 +1,5 @@
-﻿using Microsoft.Extensions.Logging;
+﻿using Expense_Splitter_App.ViewModel;
+using Microsoft.Extensions.Logging;
 
 namespace Expense_Splitter_App
 {
@@ -15,8 +16,16 @@ namespace Expense_Splitter_App
                     fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
                 });
 
+            builder.Services.AddSingleton<MainPage>();
+            builder.Services.AddSingleton<MainViewModel>();
+
+            builder.Services.AddTransient<GroupExpenseList>();
+            builder.Services.AddTransient<GroupExpenseViewModel>();
+
+
+
 #if DEBUG
-    		builder.Logging.AddDebug();
+            builder.Logging.AddDebug();
 #endif
 
             return builder.Build();
